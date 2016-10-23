@@ -11,11 +11,15 @@
   </properties>
   <description>Praktyczna część kursu na stronie kobietydokodu.pl</description>
   <packaging>pom</packaging>
-  <modules>
-  	<module>bazakotow-domain</module>
-  	<module>bazakotow-application</module>
-  	<module>bazakotow-webapp</module>
-  </modules>
+  <profiles>
+    <profile>
+    <modules>
+  	  <module>bazakotow-domain</module>
+  	  <module>bazakotow-application</module>
+  	  <module>bazakotow-webapp</module>
+    </modules>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>

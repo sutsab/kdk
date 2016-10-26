@@ -13,27 +13,28 @@ import com.leadinweb.bazakotow.application.CatDAO;
 public class CatsController {
 	
 	@Autowired
-    private CatDAO kotDao;
+    private CatDAO catDAO;
 	
 	@RequestMapping("/")
-	public String main(){
-		return "main";
+	public String index(){
+		return "index";
 	}
 	
-    @RequestMapping("/model")
-    public String modelExample(Model model) {
-        model.addAttribute("message", "To jest jakaś super informacja");
-        return "main";
+    @RequestMapping("/list")
+    public String listCats(Model model) {
+        model.addAttribute("cats", catDAO.getCats());
+        return "listCats";
     }
     
-    @RequestMapping("/cat/{name}")
-    public String catDetails(@PathVariable("name") String name) {
-        return "main";
+    @RequestMapping("/cat/{id}")
+    public String catDetails(@PathVariable("id") Integer id, Model model) {
+    	model.addAttribute("cat", catDAO.getCat(id));
+        return "catDetails";
     } 
     
-    @RequestMapping("/method")
-    public String view(@RequestParam("a") String aData, @RequestParam(value = "b", required = false, defaultValue = "0") Integer bData) {
-     return "main";
+    @RequestMapping("/add")
+    public String addCat() {
+     return "addCat";
     }    
 	
 }

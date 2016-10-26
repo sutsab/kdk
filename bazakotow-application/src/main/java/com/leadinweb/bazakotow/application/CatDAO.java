@@ -14,6 +14,10 @@ public class CatDAO {
 		System.out.println("Dodano kota do kolekcji");
 	}
 	
+	public Cat getCat(Integer id){
+		return cats.get(id);
+	}
+	
 	public List<Cat> getCats(){
 		return cats;
 	}

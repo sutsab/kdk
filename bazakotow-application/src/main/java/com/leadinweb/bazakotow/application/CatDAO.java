@@ -15,7 +15,11 @@ public class CatDAO {
 	}
 	
 	public Cat getCat(Integer id){
-		return cats.get(id);
+		if(id < cats.size()){
+			return cats.get(id);
+		} else {
+			return null;
+		}
 	}
 	
 	public List<Cat> getCats(){

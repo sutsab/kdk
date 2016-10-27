@@ -12,6 +12,7 @@
 
     <context:component-scan base-package="com.leadinweb" /> <!-- Chcemy automatycznie obsługiwać wszystkie klasy z adnotacjami w tym pakiecie -->
     <context:annotation-config /> <!-- To na przyszłość, pozwoli nam korzystać z adnotacji także w klasach, które byśmy skonfigurowali ręcznie -->
+	<mvc:annotation-driven />
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix">
